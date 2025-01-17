@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from IPython.display import HTML
 
-def binary_animate(data: np.ndarray) -> None:
+def grayscale_animate(data: np.ndarray) -> None:
     """Animate 2D binary video
     
     Parameter
@@ -15,7 +15,7 @@ def binary_animate(data: np.ndarray) -> None:
     """
     
     fig, ax = plt.subplots()
-    im = ax.imshow(data[0], cmap='binary')
+    im = ax.imshow(data[0], cmap='gray_r', vmin=0, vmax=1)
     # ax.axis('off')
 
     def update(frame_idx) -> np.ndarray:
